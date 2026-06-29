@@ -47,7 +47,6 @@ The cascade matches Math Agent sensitivity while **recovering specificity** lost
 
 Routing: 39 Math-only decisions (45%), 47 VLM calls (55%).
 
-Draft paper: [`paper/aist_submission.tex`](paper/aist_submission.tex).
 
 ## Setup
 
