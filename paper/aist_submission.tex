@@ -31,8 +31,8 @@
 }
 
 \title{%
-  Agent Cascade for Dynamic False-Positive Rate Control\\
-  in Intraoperative OCT Tumor Segmentation
+  Agent Cascade for Better Binary Classification on Small Datasets:\\
+  Boosting Conventional ML with Vision-Language Models
 }
 
 \author{%
@@ -46,29 +46,46 @@
 \maketitle
 
 \begin{abstract}
-Intraoperative optical coherence tomography (OCT) enables real-time tissue assessment during neurosurgery, but machine-learning segmenters such as support vector machines (SVMs) suffer from elevated false-positive rates (FPR) on red ``tumor'' regions that are visually indistinguishable from segmentation noise.
-We propose a \emph{two-agent cascade} that combines a rule-based \textbf{Math Agent}---quantifying red-area coverage and spatial clustering on SVM color maps---with a vision-language model (\textbf{VLM Agent}, Gemini~3.1 Flash-Lite) invoked only for uncertain cases.
-The VLM receives a structured few-shot panel (12 Normal + 12 Tumor exemplars + 1 test scan) and the Math Agent statistics.
-On a held-out dataset of 86 annotated OCT scans (44 Normal, 42 Tumor), the cascade achieves 90.5\% sensitivity, 93.2\% specificity, and 91.9\% accuracy, outperforming the published SVM baseline (83/85/84) and matching or exceeding a Gemini~3.1 Pro zero-shot baseline (86/93/90) while calling the VLM on only 47 of 86 scans (55\%).
-Code is available in the project repository; the clinical dataset is withheld pending approval.
+Simple models such as support vector machines (SVMs) train reliably on small datasets and provide fast, interpretable segmentations, but they \emph{cannot perform perceptual analysis}: morphological cues that separate true signal from noise remain outside their representational capacity.
+Conversely, vision-language models (VLMs) excel at visual reasoning yet \emph{cannot execute an SVM within their native architecture}---not without generating and running external code---and are costly as standalone classifiers on niche medical imagery.
+We propose \emph{agent boosting}: a linear two-agent cascade that combines conventional ML with a general-purpose VLM, delegating only ambiguous cases to the stronger model.
+A rule-based \textbf{Math Agent} screens SVM color maps using red-area coverage and spatial clustering; a \textbf{VLM Agent} (Gemini~3.1 Flash-Lite), fed few-shot exemplars and Math statistics, resolves uncertainty.
+We demonstrate the approach on intraoperative optical coherence tomography (OCT): binary tumor vs.\ segmentation-noise classification on 86 scans (44 Normal, 42 Tumor).
+The cascade reaches 90.5\% sensitivity, 93.2\% specificity, and 91.9\% accuracy---outperforming published SVM (83/85/84) and Gemini~3.1 Pro (86/93/90) baselines---while invoking the VLM on only 55\% of cases.
+This work is an early step toward richer multi-agent graphs; code is available, the clinical dataset is withheld pending approval.
 \end{abstract}
 
 %=============================================================================
 \section{Introduction}
 %=============================================================================
 
-SVM-based tissue classifiers for intraoperative OCT produce color-coded maps: green (healthy white matter), yellow (damaged matter), and red (tumor infiltration).
-A persistent clinical problem is \emph{false-positive red regions} on otherwise normal tissue---thin vertical stripes or scattered pixels that inflate the FPR and may mislead the surgeon.
+When labeled data are scarce, practitioners still face a familiar trade-off.
+\emph{Simple models}---SVMs, shallow ensembles, hand-crafted features---are fast, interpretable, and sample-efficient, yet they lack perceptual depth: they cannot distinguish a thin vertical artifact from a dense infiltrating tumor cluster without features a human would call ``visual.''
+\emph{Complex models}---large VLMs---can reason about morphology, yet they cannot, within their own forward pass, train or run an SVM; doing so requires tool use, code generation, and external execution.
+Replacing simple models outright wastes their strengths; using VLMs alone wastes compute and stability on easy cases.
 
-Purely visual large language / vision-language models (VLMs) can reason about morphology but are costly and may hallucinate without quantitative anchors.
-We hypothesize that a lightweight \emph{agent cascade}---deterministic pre-screening followed by targeted VLM validation---reduces API cost while improving discrimination over either component alone.
+We argue for \textbf{agent boosting}: combine conventional ML methods with VLM models so each component does what the other cannot.
+A cheap deterministic agent handles segmentation-derived numerics; a general VLM is invoked only where perceptual judgment is required.
+Better binary classification on small datasets emerges from \emph{composition}, not from choosing one paradigm over the other.
+
+\paragraph{Scope.}
+The system presented here is a \textbf{linear two-agent cascade}, not a full \textbf{agent graph}.
+A graph formulation would require more specialized agents (e.g., morphology, calibration, cost-aware routing) and explicit edges encoding when information flows, loops, or ensembles.
+We view this cascade as a deliberate first step: it already shows that boosting simple and strong models beats either alone, while remaining simple enough to analyze on $n=86$ scans.
+Extending toward a multi-agent graph is ongoing work.
+
+\paragraph{Case study.}
+We instantiate agent boosting on intraoperative OCT during neurosurgery.
+An SVM color-maps tissue: green (healthy white matter), yellow (damaged matter), red (tumor).
+False-positive red stripes on normal tissue inflate the false-positive rate (FPR) and may mislead the surgeon.
+The binary task is \textbf{TUMOR} vs.\ \textbf{NOISE} (segmentation artifact).
 
 Our contributions:
 \begin{enumerate}[nosep]
-  \item A Math Agent with interpretable area and clustering features and a three-way verdict (NOISE / UNCERTAIN / TUMOR).
-  \item A VLM Agent with few-shot visual grounding and structured prompts in neuro-oncology terminology.
-  \item A strict cascade policy: VLM is called \emph{only} when the Math Agent returns UNCERTAIN, routing 45\% of scans without an API call.
-  \item Empirical evaluation on 86 scans with comparison to published baselines from the MDPI reference study~\cite{mdpi2024}.
+  \item Framing \emph{agent boosting} for small-data binary classification: conventional ML screening plus selective VLM escalation.
+  \item A Math Agent (area, clustering, three-way verdict) and a VLM Agent (few-shot panel, structured neuro-oncology prompts).
+  \item A strict cascade: VLM called only on UNCERTAIN cases (45\% of scans resolved without API).
+  \item Empirical validation on 86 OCT scans vs.\ published SVM, Gemini~3.1 Pro, and HITL baselines~\cite{mdpi2024}.
 \end{enumerate}
 
 %=============================================================================
@@ -76,8 +93,11 @@ Our contributions:
 %=============================================================================
 
 Prior work on OCT tumor detection combines classical ML segmenters with human-in-the-loop (HITL) review by neurosurgeons~\cite{mdpi2024}.
-Recent VLMs (e.g., Gemini) have been applied as standalone classifiers on OCT imagery.
-Our approach differs by \emph{decoupling} fast geometric FPR estimation from slow visual reasoning, and by supplying the VLM with both numeric features and curated few-shot exemplars of known false positives vs.\ true tumors.
+Recent VLMs (e.g., Gemini) have been evaluated as standalone classifiers on OCT imagery.
+Ensemble and stacking methods boost weak learners with stronger ones, but typically within a single model family (e.g., trees, neural nets).
+Our approach differs in two ways.
+First, we \emph{boost across paradigms}: geometric features from an SVM pipeline plus perceptual reasoning from a VLM.
+Second, we treat routing as an \emph{agent policy}---the Math Agent decides whether the VLM is needed---anticipating richer graph-structured multi-agent systems where multiple specialists interact through typed edges.
 
 %=============================================================================
 \section{Method}
@@ -85,7 +105,7 @@ Our approach differs by \emph{decoupling} fast geometric FPR estimation from slo
 
 \subsection{Dataset and Task}
 
-We evaluate on 86 intraoperative OCT scans with SVM segmentation overlays, partitioned by histology-confirmed labels:
+We evaluate agent boosting on a case study: 86 intraoperative OCT scans with SVM segmentation overlays, partitioned by histology-confirmed labels:
 44 Normal (Class1, no tumor; SVM may show spurious red) and 42 Tumor (Class2, confirmed infiltration).
 The binary task is: \textbf{TUMOR} vs.\ \textbf{NOISE} (artifact / false positive).
 Ground truth is used only for evaluation, not for routing.
@@ -142,7 +162,8 @@ UNCERTAIN & Call VLM & VLM $\rightarrow$ TUMOR or NOISE \\
 \end{tabular}
 \end{center}
 
-This \emph{strict cascade} minimizes VLM calls while delegating ambiguous morphology to visual reasoning.
+This \emph{strict cascade} is the simplest non-trivial agent topology: a single routing edge from Math to VLM on uncertainty.
+It minimizes VLM calls while delegating perceptual disambiguation---the capability conventional ML lacks---to the stronger model.
 
 %=============================================================================
 \section{Experiments}
@@ -248,17 +269,25 @@ At this threshold, LOOCV sensitivity/specificity (90.5/88.6) match the rule-base
 \section{Discussion}
 %=============================================================================
 
-The agent cascade demonstrates that \emph{quantitative pre-filtering plus selective VLM review} is an effective strategy for dynamic FPR management:
+The results support the \emph{agent boosting} hypothesis on a small medical dataset:
 \begin{itemize}[nosep]
-  \item Math Agent alone achieves high sensitivity but routes all Normal scans as UNCERTAIN (zero specificity on auto-decisions).
-  \item Adding Gemini on uncertain cases restores specificity to 93.2\% with no sensitivity loss.
-  \item API cost is nearly halved vs.\ calling VLM on every scan.
+  \item \textbf{Simple alone is not enough.} The Math Agent (conventional ML features on SVM output) reaches high sensitivity but cannot auto-resolve Normal cases---all 44 are UNCERTAIN under our rules.
+  \item \textbf{VLM alone is not necessary on every case.} Selective escalation restores specificity to 93.2\% with no sensitivity loss vs.\ Math-only, beating Gemini~3.1 Pro used as a standalone baseline.
+  \item \textbf{Composition beats either part.} The cascade outperforms both published SVM and VLM baselines while halving API cost relative to always-on VLM inference.
 \end{itemize}
+
+Each model class contributes a capability the other lacks: SVM~+~Math for cheap numeric screening; VLM for perceptual disambiguation that SVM features cannot encode.
+
+\paragraph{Toward agent graphs.}
+The present system is a single-path cascade (Math $\rightarrow$ VLM).
+A fuller agent graph would add nodes for complementary skills---morphology specialists, uncertainty calibration, ensemble voters---and edges for bidirectional feedback.
+We have not yet reached that level of agent diversity or interconnection; this submission documents the boosting principle and its empirical payoff as groundwork.
 
 \textbf{Limitations.}
 Small single-center dataset ($n=86$); no confidence intervals in this draft (planned for revision).
 Few-shot exemplars are drawn from the same pool as test scans (with leave-one-out replacement when a test image is selected as exemplar).
 Gemini~3.1 Flash-Lite is weaker than Pro but sufficient when guided by Math features.
+The linear topology may underfit settings requiring multi-hop reasoning or agent negotiation.
 
 %=============================================================================
 \section{Reproducibility}
@@ -296,9 +325,10 @@ Full per-scan outputs: \texttt{results/scans\_summary.csv}, \texttt{results/pipe
 \section{Conclusion}
 %=============================================================================
 
-We presented a two-agent cascade for intraoperative OCT false-positive control.
-A interpretable Math Agent handles clear cases; Gemini~3.1 Flash-Lite with few-shot exemplars resolves uncertainty.
-On 86 scans the method reaches 91.9\% accuracy, surpassing published SVM and Gemini~Pro baselines while using the VLM for only 55\% of cases.
+We presented \emph{agent boosting} for binary classification on small datasets: conventional ML (SVM segmentation plus a Math Agent) combined with a general-purpose VLM (Gemini~3.1 Flash-Lite) in a linear two-agent cascade.
+Simple models supply fast, interpretable screening; the VLM supplies perceptual analysis that SVMs cannot perform natively---and that VLMs cannot replace with internal SVM execution.
+On 86 intraoperative OCT scans the cascade reaches 91.9\% accuracy, surpassing published SVM and Gemini~Pro baselines while calling the VLM on only 55\% of cases.
+This is a step toward multi-agent graphs with richer specialist nodes and explicit inter-agent wiring; the boosting principle already yields measurable gains before that infrastructure is complete.
 
 %=============================================================================
 % References
