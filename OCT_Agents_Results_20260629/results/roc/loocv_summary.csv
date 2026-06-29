@@ -1,0 +1,2 @@
+﻿Метод,Порог,AUC (mean ± std),Youden J,"Sensitivity, %","Specificity, %","Accuracy, %",TP,TN,FP,FN
+Math Agent — red% (LOOCV),median fold threshold = 16.62%,0.970 ± 0.002,0.791,90.5,88.6,89.5,38,39,5,4

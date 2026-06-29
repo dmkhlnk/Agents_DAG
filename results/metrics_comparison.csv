@@ -1,0 +1,7 @@
+﻿Метод оценки,"Чувствительность (Sensitivity), %","Специфичность (Specificity), %","Общая точность (Global Accuracy), %"
+SVM (baseline) (из статьи) [11],83.0,85.0,84.0
+Gemini 3.1 Pro (baseline) (из статьи) [11],86.0,93.0,90.0
+Врачи-нейрохирурги (HITL) (из статьи) [11],98.0,90.0,94.0
+Math Agent (cascade) + Gemini 3.1 Flash-Lite,90.5,93.2,91.9
+Math Agent (only),90.5,88.6, 89.5
+

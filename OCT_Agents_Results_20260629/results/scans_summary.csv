@@ -1,0 +1,87 @@
+﻿Имя файла,% Красного (SVM),Мнение Math Agent,Мнение VLM (Gemini),Финальное решение,Источник,Ground Truth,Ошибка?,Тип ошибки (если есть)
+OCT (10)Proc2.jpg,2.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (13)Proc2.jpg,3.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (14)Proc2.jpg,2.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (16)Proc2.jpg,14.5%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (17)Proc2.jpg,2.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (18)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (19)Proc2.jpg,7.2%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (20)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (24)Proc2.jpg,2.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (25)Proc2.jpg,8.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (26)Proc2.jpg,2.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (27)Proc2.jpg,2.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (28)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (29)Proc2.jpg,10.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (3)Proc2.jpg,3.1%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (30)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (31)Proc2.jpg,3.2%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (34)Proc2.jpg,2.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (35)Proc2.jpg,27.4%,Uncertainty,TUMOR,TUMOR,VLM,Normal,Да,False Positive (Ложное срабатывание)
+OCT (36)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (37)Proc2.jpg,2.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (41)Proc2.jpg,26.6%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (42)Proc2.jpg,2.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (43)Proc2.jpg,2.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (44)Proc2.jpg,7.9%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (45)Proc2.jpg,17.2%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (46)Proc2.jpg,2.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (47)Proc2.jpg,2.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (50)Proc2.jpg,81.4%,High Risk,—,TUMOR,Math,Normal,Да,False Positive (Ложное срабатывание)
+OCT (51)Proc2.jpg,3.3%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (52)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (53)Proc2.jpg,14.5%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (54)Proc2.jpg,4.8%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (55)Proc2.jpg,2.5%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (56)Proc2.jpg,4.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (57)Proc2.jpg,2.6%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (58)Proc2.jpg,50.4%,High Risk,—,TUMOR,Math,Normal,Да,False Positive (Ложное срабатывание)
+OCT (6)Proc2.jpg,3.1%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (60)Proc2.jpg,2.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (7)Proc2.jpg,3.0%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (71)Proc2.jpg,3.3%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (8)Proc2.jpg,3.2%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (86)Proc2.jpg,3.2%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (9)Proc2.jpg,3.7%,Uncertainty,NOISE,NOISE,VLM,Normal,Нет,—
+OCT (1)Proc2.jpg,87.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (11)Proc2.jpg,87.7%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (12)Proc2.jpg,78.7%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (15)Proc2.jpg,93.3%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (2)Proc2.jpg,88.9%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (21)Proc2.jpg,84.3%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (22)Proc2.jpg,68.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (23)Proc2.jpg,30.1%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (32)Proc2.jpg,91.8%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (33)Proc2.jpg,85.4%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (38)Proc2.jpg,16.6%,Uncertainty,NOISE,NOISE,VLM,Tumor,Да,False Negative (Пропуск опухоли)
+OCT (39)Proc2.jpg,92.2%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (4)Proc2.jpg,78.4%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (40)Proc2.jpg,93.2%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (48)Proc2.jpg,76.6%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (49)Proc2.jpg,66.1%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (5)Proc2.jpg,54.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (59)Proc2.jpg,84.3%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (61)Proc2.jpg,62.9%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (62)Proc2.jpg,43.7%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (63)Proc2.jpg,63.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (64)Proc2.jpg,41.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (65)Proc2.jpg,91.4%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (66)Proc2.jpg,80.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (67)Proc2.jpg,44.1%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (68)Proc2.jpg,68.6%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (69)Proc2.jpg,93.5%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (70)Proc2.jpg,91.9%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (72)Proc2.jpg,17.9%,Uncertainty,NOISE,NOISE,VLM,Tumor,Да,False Negative (Пропуск опухоли)
+OCT (73)Proc2.jpg,67.2%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (74)Proc2.jpg,52.2%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (75)Proc2.jpg,58.9%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (76)Proc2.jpg,24.3%,Uncertainty,NOISE,NOISE,VLM,Tumor,Да,False Negative (Пропуск опухоли)
+OCT (77)Proc2.jpg,38.3%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (78)Proc2.jpg,50.8%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (79)Proc2.jpg,61.7%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (80)Proc2.jpg,5.1%,Uncertainty,NOISE,NOISE,VLM,Tumor,Да,False Negative (Пропуск опухоли)
+OCT (81)Proc2.jpg,32.1%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (82)Proc2.jpg,74.8%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (83)Proc2.jpg,63.9%,High Risk,—,TUMOR,Math,Tumor,Нет,—
+OCT (84)Proc2.jpg,28.1%,Uncertainty,TUMOR,TUMOR,VLM,Tumor,Нет,—
+OCT (85)Proc2.jpg,56.0%,High Risk,—,TUMOR,Math,Tumor,Нет,—

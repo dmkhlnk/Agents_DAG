@@ -1,0 +1,199 @@
+{
+  "seed": 42,
+  "normal": [
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (55)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N1",
+      "red_percentage": 2.45,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (27)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N2",
+      "red_percentage": 2.7,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (26)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N3",
+      "red_percentage": 2.79,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (17)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N4",
+      "red_percentage": 2.89,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (14)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N5",
+      "red_percentage": 2.92,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (30)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N6",
+      "red_percentage": 3.02,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (6)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N7",
+      "red_percentage": 3.08,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (31)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N8",
+      "red_percentage": 3.16,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (9)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N9",
+      "red_percentage": 3.67,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (19)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N10",
+      "red_percentage": 7.2,
+      "clustering_ratio": 60.52,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (29)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N11",
+      "red_percentage": 10.93,
+      "clustering_ratio": 75.52,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class1/OCT (41)Proc2.jpg",
+      "ground_truth": "Normal",
+      "grid_label": "N12",
+      "red_percentage": 26.63,
+      "clustering_ratio": 23.83,
+      "math_opinion": "Uncertainty"
+    }
+  ],
+  "tumor": [
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (80)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T1",
+      "red_percentage": 5.06,
+      "clustering_ratio": 100.0,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (76)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T2",
+      "red_percentage": 24.31,
+      "clustering_ratio": 44.95,
+      "math_opinion": "Uncertainty"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (77)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T3",
+      "red_percentage": 38.32,
+      "clustering_ratio": 88.9,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (67)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T4",
+      "red_percentage": 44.06,
+      "clustering_ratio": 92.93,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (85)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T5",
+      "red_percentage": 55.97,
+      "clustering_ratio": 66.15,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (61)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T6",
+      "red_percentage": 62.93,
+      "clustering_ratio": 68.96,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (73)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T7",
+      "red_percentage": 67.22,
+      "clustering_ratio": 86.48,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (82)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T8",
+      "red_percentage": 74.81,
+      "clustering_ratio": 81.59,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (66)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T9",
+      "red_percentage": 80.02,
+      "clustering_ratio": 88.88,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (33)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T10",
+      "red_percentage": 85.41,
+      "clustering_ratio": 85.89,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (65)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T11",
+      "red_percentage": 91.4,
+      "clustering_ratio": 97.75,
+      "math_opinion": "High Risk"
+    },
+    {
+      "image_path": "/Users/d.mkhlnk/ОКТ/Граф агентов (агентный бустинг)/DATASETS_MDPI/Class2/OCT (39)Proc2.jpg",
+      "ground_truth": "Tumor",
+      "grid_label": "T12",
+      "red_percentage": 92.19,
+      "clustering_ratio": 97.94,
+      "math_opinion": "High Risk"
+    }
+  ]
+}

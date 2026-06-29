@@ -1,0 +1,31 @@
+# Secrets — never commit
+.env
+
+# Dataset (not public yet)
+DATASETS_MDPI/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.pdf
+paper/*.synctex.gz
+#mock files 
+scans_summary_mock.csv
+metrics_comparison_mock.csv
+
