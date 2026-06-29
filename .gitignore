@@ -25,6 +25,8 @@ paper/*.bbl
 paper/*.blg
 paper/*.pdf
 paper/*.synctex.gz
+paper/aist_submission.tex
+paper
 #mock files 
 scans_summary_mock.csv
 metrics_comparison_mock.csv
